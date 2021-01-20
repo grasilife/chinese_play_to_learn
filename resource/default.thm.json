@@ -1,0 +1,17 @@
+{
+	"skins": {},
+	"autoGenerateExmlsList": true,
+	"exmls": [
+		"resource/UISkins/mainview/GroundItemSkin.exml",
+		"resource/UISkins/mainview/MainViewSkin.exml",
+		"resource/UISkins/mainview/TabItemSkin.exml",
+		"resource/UISkins/mainview/TestPopupSkin.exml",
+		"resource/UISkins/mainview/TipDialogSkin.exml",
+		"resource/UISkins/mainview/归档/GroundItemSkin.exml",
+		"resource/UISkins/mainview/归档/MainViewSkin.exml",
+		"resource/UISkins/mainview/归档/TabItemSkin.exml",
+		"resource/UISkins/mainview/归档/TestPopupSkin.exml",
+		"resource/UISkins/mainview/归档/TipDialogSkin.exml"
+	],
+	"path": "resource/default.thm.json"
+}

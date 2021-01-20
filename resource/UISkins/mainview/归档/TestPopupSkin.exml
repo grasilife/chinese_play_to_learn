@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="TestPopupSkin"
+	 width="490"
+	height="871.547" xmlns:e="http://ns.egret.com/eui">
+	<e:Group id="UIBase" width="490" height="871.547" x="0" y="0">
+		<e:Image source="LoadingBG_jpg" scaleX="1" scaleY="1" width="490" height="871.547" y="0" x="0"/>
+		<e:Image id="CloseBtn" x="381" y="48" source="LoadingIcon_png"/>
+	</e:Group>
+	<e:Label text="这是Popup" anchorOffsetX="0" width="248" anchorOffsetY="0" height="72.333" size="30" textColor="0xFF0000" verticalAlign="middle" textAlign="center" y="412.667" x="121"/>
+</e:Skin>

@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>学而思进步宇宙</title>
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="true" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <style>
+        html,
+        body {
+            -ms-touch-action: none;
+            background: #888888;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="./static/css/yearReview.c638793f.css">
+    <script type="text/javascript" src="https://libs.xesimg.com/xes_fe_log/2.0.0/fe-logger-sdk.min.js"></script>
+</head>
+
+<body>
+    <div style="margin: auto;width: 100%;height: 100%;" class="egret-player" data-entry-class="Main"
+        data-orientation="portrait" data-scale-mode="fixedWidth" data-frame-rate="30" data-content-width="750"
+        data-content-height="1660" data-show-paint-rect="false" data-multi-fingered="2" data-show-fps="false"
+        data-show-log="false" data-show-fps-style="x:0,y:0,size:13,textColor:0xffffff,bgAlpha:0.5">
+    </div>
+    <script>
+
+        //阻止事件冒泡
+        document.body.addEventListener('touchmove', function (e) {
+            e.preventDefault()
+        }, { passive: false })
+
+        // 初始埋点SDK
+        const logger = new XesLoggerSDK({
+            cacheUploader: {
+                interval: 10000,
+                batch: 5,
+            },
+            common: {
+                eventid: 'year_review',
+            },
+            network: {
+                open: true,
+                sample: 1
+            },
+            clickMsg: {
+                open: true
+            },
+            loadMsg: {
+                open: false                      // 自动展现日志开关
+            },
+            runtime: {
+                open: true,
+                sample: 1
+            },
+            resource: {
+                open: true,
+                sample: 1
+            },
+            // hashchange: {
+            //     open: false,                     // hashchange自动展现日志开关
+            //     pvid: 'hash',
+            //     pageuid: {                       // 展现日志、交互日志pageuid路由映射
+            //         'index': 'pageindex',        // 首页路由pageuid映射
+            //         'path': 'path333',
+            //         'path/a': 'path/a333'
+            //     },
+            //     loadParam: {                     // 展现日志私有字段路由映射
+            //         'index': { 'key1': 'xxx' },    // 首页路由展现日志私有字段映射
+            //         'path': { 'key1': 'yyy' },
+            //         'path/a': { 'key1': 'zzz' }
+            //     }
+            // },
+            performance: {
+                open: true,
+                sample: 1
+            },
+            vue: {
+                errorHandler: false
+            },
+            trace: {
+                open: true
+            },
+            appid: {
+                'activity.xueersi.com': {
+                    'appid': '1001132'
+                },
+            },
+            param: {
+                'key': '200021'                 // 展现日志、交互日志公共字段
+            }
+        });
+
+        var loadScript = function (list, callback) {
+            var loaded = 0;
+            var loadNext = function () {
+                loadSingleScript(list[loaded], function () {
+                    loaded++;
+                    if (loaded >= list.length) {
+                        callback();
+                    }
+                    else {
+                        loadNext();
+                    }
+                })
+            };
+            loadNext();
+        };
+
+        var loadSingleScript = function (src, callback) {
+            var s = document.createElement('script');
+            s.async = false;
+            s.src = src;
+            s.addEventListener('load', function () {
+                s.parentNode.removeChild(s);
+                s.removeEventListener('load', arguments.callee, false);
+                callback();
+            }, false);
+            document.body.appendChild(s);
+        };
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', './manifest.json?v=' + Math.random(), true);
+        xhr.addEventListener("load", function () {
+            var manifest = JSON.parse(xhr.response);
+            var list = manifest.initial.concat(manifest.game);
+            loadScript(list, function () {
+                /**
+                 * {
+                 * "renderMode":, //Engine rendering mode, "canvas" or "webgl"
+                 * "audioType": 0 //Use the audio type, 0: default, 2: web audio, 3: audio
+                 * "antialias": //Whether the anti-aliasing is enabled in WebGL mode, true: on, false: off, defaults to false
+                 * "calculateCanvasScaleFactor": //a function return canvas scale factor
+                 * }
+                 **/
+                egret.runEgret({
+                    renderMode: "webgl", audioType: 0, calculateCanvasScaleFactor: function (context) {
+                        var backingStore = context.backingStorePixelRatio ||
+                            context.webkitBackingStorePixelRatio ||
+                            context.mozBackingStorePixelRatio ||
+                            context.msBackingStorePixelRatio ||
+                            context.oBackingStorePixelRatio ||
+                            context.backingStorePixelRatio || 1;
+                        return (window.devicePixelRatio || 1) / backingStore;
+                    }
+                });
+            });
+        });
+        xhr.send(null);
+    </script>
+
+    <div id="app" style="position: absolute;"></div>
+    <script src="static/js/yearReview.0907bf38.js"></script>
+    <div style="position: absolute;display: none;">
+        <input type="file" accept="image/*;" capture="camera" id="inputCamera" />
+        <!-- <input type="file" accept="video/*" capture="camcorder"> -->
+        <input type="file" accept="image/*" id="inputImage" />
+    </div>
+    <div id="adDiv"></div>
+
+</body>
+
+</html>

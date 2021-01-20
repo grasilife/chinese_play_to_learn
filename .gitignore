@@ -1,0 +1,18 @@
+.DS_Store
+node_modules
+/dist
+
+# local env files
+/bin-debug
+
+# Editor directories and files
+.wing
+.idea
+.vscode
+.history
+.ionide
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="TipDialogSkin"
+	 width="750"
+	height="1664" xmlns:e="http://ns.egret.com/eui">
+	<e:Group id="UIBase" width="750" x="0" height="1664" y="0">
+		<e:Rect fillAlpha="0.3" width="750" x="0" height="1664" y="0"/>
+		<e:Image source="tip-bg_png" y="582" anchorOffsetX="0" width="670" horizontalCenter="0"/>
+		<e:Image id="cancelBtn" source="confirm-btn_png" x="124" y="970"/>
+		<e:Image id="confirmBtn" source="confirm-btn_png" x="434" y="970"/>
+		<e:Label text="取消" x="164.988" y="994" anchorOffsetX="0" width="109" textAlign="center" verticalAlign="middle" strokeColor="0xE0A14B" stroke="3" touchEnabled="false"/>
+		<e:Label text="确定" x="481.707" y="994" anchorOffsetX="0" width="109" textAlign="center" verticalAlign="middle" strokeColor="0xE0A14B" stroke="3" touchEnabled="false"/>
+		<e:Label id="tipText" x="98" y="731" anchorOffsetX="0" width="549" anchorOffsetY="0" height="185" textColor="0xE0A14B" textAlign="center" verticalAlign="middle" text="是否话费500金币解锁此地块？"/>
+		<e:Image id="closeBtn" y="559" anchorOffsetX="0" anchorOffsetY="0" x="645.416" width="83" height="83" scaleX="1" scaleY="1" source="close-btn_png"/>
+	</e:Group>
+</e:Skin>

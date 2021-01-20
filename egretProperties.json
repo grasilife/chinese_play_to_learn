@@ -1,0 +1,44 @@
+{
+  "engineVersion": "5.3.10",
+  "compilerVersion": "5.3.10",
+  "template": {},
+  "target": {
+    "current": "web"
+  },
+  "modules": [
+    {
+      "name": "egret"
+    },
+    {
+      "name": "eui"
+    },
+    {
+      "name": "game"
+    },
+    {
+      "name": "assetsmanager"
+    },
+    {
+      "name": "dragonBones"
+    },
+    {
+      "name": "tween"
+    },
+    {
+      "name": "promise"
+    },
+    {
+      "name": "weixinapi",
+      "path": "./libs/weixinapi"
+    },
+    {
+      "name": "particle",
+      "path": "./libs/particle"
+    }
+  ],
+  "eui": {
+    "exmlRoot": [
+      "resource/UISkins"
+    ]
+  }
+}

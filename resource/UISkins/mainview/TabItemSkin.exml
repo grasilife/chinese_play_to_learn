@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="TabItemSkin"
+	 width="122"
+	height="122" xmlns:e="http://ns.egret.com/eui">
+	<e:Group width="122" height="122" x="0" y="0">
+		<e:Image id="tabIcon" source="wb_png" scaleX="1" scaleY="1" width="122" height="122" y="0" x="0"/>
+		<e:Label id="tabName" text="排行榜" textAlign="center" anchorOffsetX="0" width="122" verticalAlign="middle" fontFamily="Tahoma" strokeColor="0x3D050B" stroke="3" size="24" anchorOffsetY="0" height="32" scaleX="1" scaleY="1" left="0" bottom="0" visible="true"/>
+	</e:Group>
+</e:Skin>
